@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Getway Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      h1 {
+        color: #0056b3;
+      }
+      .endpoint {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid #0056b3;
+      }
+      pre {
+        background: #eee;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+      code {
+        background: #e2e2e2;
+        padding: 0.2rem 0.4rem;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>API Gateway Documentation</h1>
+
+    <p>
+      All endpoints require a valid <code>X-API-Key</code> header to access. You
+      may also be rate-limited if you exceed 10 requests per minute.
+    </p>
+
+    <div class="endpoint">
+      <h2>GET /api/users</h2>
+      <p><strong>Header Required:</strong> <code>X-API-Key</code></p>
+      <p><strong>Description:</strong> Returns a list of users.</p>
+
+      <h3>Success Response:</h3>
+      <pre><code>{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" }
+  ]
+}</code></pre>
+
+      <h3>Error Responses:</h3>
+      <ul>
+        <li><strong>401 Unauthorized:</strong> Missing or invalid API key</li>
+        <li><strong>429 Too Many Requests:</strong> Rate limit exceeded</li>
+      </ul>
+    </div>
+
+    <div class="endpoint">
+      <h2>GET /api/products</h2>
+      <p><strong>Header Required:</strong> <code>X-API-Key</code></p>
+      <p><strong>Description:</strong> Returns a list of products.</p>
+
+      <h3>Success Response:</h3>
+      <pre><code>{
+  "products": [
+    { "id": 101, "name": "Widget" },
+    { "id": 102, "name": "Gadget" }
+  ]
+}</code></pre>
+
+      <h3>Error Responses:</h3>
+      <ul>
+        <li><strong>401 Unauthorized:</strong> Missing or invalid API key</li>
+        <li><strong>429 Too Many Requests:</strong> Rate limit exceeded</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>For help, contact support@example.com</p>
+    </footer>
+  </body>
+</html>
